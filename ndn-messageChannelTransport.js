@@ -9,7 +9,7 @@ local.transport = function (port) {
   this.port = port
 };
 
-
+console.log(ndnbuf)
 /**
  * Connect to the host and port in face.  This replaces a previous connection and sets connectedHost
  *   and connectedPort.  Once connected, call onopenCallback().
