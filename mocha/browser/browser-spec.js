@@ -1,3 +1,7 @@
+var ndn = require('ndn-lib')
+ndn.messageChannelTransport = require('../../ndn-messageChannelTransport.js')
+
+console.log(ndn)
 function onInterest1 (prefix,interest,transport){
   console.log("got interest", prefix)
   var d = new ndn.Data(new ndn.Name(interest.name.toUri()), new ndn.SignedInfo(), "success")
@@ -21,8 +25,8 @@ var testvars = {}
 function init(){
 var ms = new MessageChannel()
   , RegisteredPrefix = function RegisteredPrefix(prefix, closure) {  this.prefix = new ndn.Name(prefix);    this.closure = closure}
-  , transport1 = new messageChannelTransport.transport(ms.port1)
-  , transport2 = new messageChannelTransport.transport(ms.port2)
+  , transport1 = new ndn.messageChannelTransport.transport(ms.port1)
+  , transport2 = new ndn.messageChannelTransport.transport(ms.port2)
   , face1 = new ndn.Face({host: 1, port: 1, getTransport: function(){return transport1}})
   , face2 = new ndn.Face({host: 1, port: 1, getTransport: function(){return transport2}})
   , closure1 = new ndn.Face.CallbackClosure(null, null, onInterest1, 'face1', face1.transport)

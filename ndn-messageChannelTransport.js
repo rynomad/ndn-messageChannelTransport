@@ -1,6 +1,6 @@
 var ndn = require('ndn-lib');
 var ElementReader = ndn.ElementReader;
-var ndnbuf = ndn.internalBuf;
+var ndnbuf = ndn.customBuffer;
 var Name = ndn.Name
 var Data = ndn.Data
 var local = {}
@@ -18,6 +18,7 @@ local.transport = function (port) {
  */
 local.transport.prototype.connect = function(face, onopenCallback)
 {
+  console.log(ndn, ElementReader)
   this.elementReader = new ElementReader(face);
   var self = this;
   this.port.onmessage = function(ev) {

@@ -2,7 +2,7 @@
   "name": "ndn-messageChannelTransport",
   "version": "0.0.0",
   "description": "HTML5 messageChannel binding for NDN-js",
-  "main": "ndn-MessageChannelTransport.js",
+  "main": "ndn-messageChannelTransport.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +19,13 @@
   "license": "GPL",
   "bugs": {
     "url": "https://github.com/rynomad/ndn-messageChannelTransport/issues"
+  },
+  "devDependencies": {
+    "grunt-contrib-connect": "~0.7.1",
+    "grunt": "~0.4.4",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-saucelabs": "~5.1.1",
+    "browserify": "~3.39.0",
+    "grunt-browserify": "~2.0.3"
   }
 }
