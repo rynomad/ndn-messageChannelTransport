@@ -60,11 +60,11 @@ module.exports = function(grunt){
         version: "33",
         platform: "OS X 10.8"
     },{
-        browserName: "internet explorer",
+        browserName: "iexplore",
         version: "11",
         platform: "Windows 8"
     },{
-        browserName: "internet explorer",
+        browserName: "iexplore",
         version: "10",
         platform: "Windows 8"
     }];
