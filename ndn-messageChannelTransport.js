@@ -9,7 +9,6 @@ local.transport = function (port) {
   this.port = port
 };
 
-console.log(ndnbuf)
 /**
  * Connect to the host and port in face.  This replaces a previous connection and sets connectedHost
  *   and connectedPort.  Once connected, call onopenCallback().
@@ -29,8 +28,8 @@ local.transport.prototype.connect = function(face, onopenCallback)
     }
     else if (ev.data instanceof ArrayBuffer) {
       var bytearray = new ndnbuf(ev.data);
-
-
+      console.log(ev.data)
+      console.log(bytearray)
       try {
         // Find the end of the binary XML element and call face.onReceivedElement.
         self.elementReader.onReceivedData(bytearray);
